@@ -1,0 +1,25 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#EA4A5E",
+    "navigationBarTitleText": "小程序",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+       "selectedIconPath": "images/one_defult.png",
+      "iconPath": "images/one_select.png"
+    },{
+      "pagePath": "pages/logs/logs",
+      "text": "调试",
+        "selectedIconPath": "images/two_select.png",
+        "iconPath": "images/two_defult.png"
+    }]
+  }
+}

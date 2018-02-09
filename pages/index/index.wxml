@@ -1,0 +1,49 @@
+<!--index.wxml-->
+<view class='container'>
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view> 
+<view class='swiper_container'>
+ <swiper indicator-dots="true"
+  autoplay="true" interval="1000" duration="1000" bindchange="swiperchange">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" width="750rpx"  height="150"/>
+    </swiper-item>
+  </block>
+  </swiper>
+  </view>
+  <view wx:if="{{noticeList}}" class="notice">
+      <text class="notice_iteml">公告：</text> 
+      <swiper wx:if="{{noticeList}}" class="notice_swiper" vertical="true" autoplay="true" circular="true" interval="3000">
+        <block wx:for-items="{{noticeList}}">
+          <swiper-item >
+            <view class="notice_itemr">{{item}}</view>
+          </swiper-item>
+        </block>
+      </swiper>
+</view>
+  <view class='item_title'>
+    今日任务
+  </view>
+ <scroll-view class="scroll-view_H" scroll-x="true">
+    <block wx:for="{{[1, 2, 3, 4, 5]}}">
+        <template is="{{item % 2 == 0 ? 'even' : 'odd'}}"/>
+    </block>
+</scroll-view>
+</view>
+<template name="odd">
+  <view class='scroll-view-item_H'> 
+      <image class='item_img' src="/images/1.jpg"></image>
+   </view>
+</template>
+<template name="even">
+  <view class='scroll-view-item_H'> 
+     <image class='item_img' src="/images/4.jpg"></image>
+   </view>
+</template>
+
